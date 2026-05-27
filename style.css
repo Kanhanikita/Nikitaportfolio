@@ -902,3 +902,21 @@ html {
     flex-direction: column;
   }
 }
+
+/* ── ABOUT — centred layout (no image) ── */
+.about-centered {
+  justify-content: center;
+}
+
+.about-centered .about-content {
+  max-width: 80rem;
+  text-align: center;
+}
+
+.about-centered .about-content h2 {
+  text-align: center;
+}
+
+.about-centered .artifact-box {
+  text-align: left;
+}

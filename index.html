@@ -8,209 +8,7 @@
   </title>
 <link rel="stylesheet" href="style.css">
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-
-<!-- Extra styles ONLY for the new sections — uses same variables as style.css -->
-<style>
-  /* ── WHY ME ── */
-  .whyme { background-color: var(--bg2); }
-  .whyme-inner {
-    display: flex;
-    gap: 6rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .whyme-text { flex: 1; min-width: 28rem; }
-  .whyme-text h3 { font-size: 2.6rem; color: var(--main); margin-bottom: 1.5rem; }
-  .whyme-text p { font-size: 1.6rem; line-height: 1.9; margin-bottom: 1.8rem; }
-  .whyme-text blockquote {
-    border-left: 3px solid var(--main);
-    padding-left: 2rem;
-    font-size: 1.8rem;
-    font-style: italic;
-    color: var(--main);
-    margin: 2rem 0;
-  }
-  .whyme-video {
-    flex: 1;
-    min-width: 28rem;
-    border: 2px dashed rgba(75,198,236,0.35);
-    border-radius: 3rem;
-    padding: 4rem 3rem;
-    text-align: center;
-    background: rgba(75,198,236,0.03);
-  }
-  .whyme-video i { font-size: 6rem; color: var(--main); }
-  .whyme-video h4 { font-size: 2.2rem; color: var(--main); margin: 1.5rem 0 1rem; }
-  .whyme-video p { font-size: 1.5rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
-
-  /* ── CAREER ── */
-  .career { background-color: var(--bg); }
-  .career-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-  }
-  .career-col h3 {
-    font-size: 2.8rem;
-    color: var(--main);
-    margin-bottom: 3rem;
-    border-bottom: 2px solid rgba(75,198,236,0.2);
-    padding-bottom: 1rem;
-  }
-  .timeline { position: relative; padding-left: 3rem; }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--main), rgba(75,198,236,0.1));
-  }
-  .tl-item { position: relative; margin-bottom: 4rem; }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    left: -3.7rem; top: 0.5rem;
-    width: 1.4rem; height: 1.4rem;
-    border-radius: 50%;
-    background: var(--main);
-    border: 3px solid var(--bg);
-    box-shadow: 0 0 8px var(--main);
-  }
-  .tl-date { font-size: 1.3rem; color: var(--main); letter-spacing: 1px; margin-bottom: 0.4rem; }
-  .tl-item h4 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .tl-item .tl-org { font-size: 1.5rem; color: rgba(255,255,255,0.55); margin-bottom: 1.2rem; }
-  .tl-item ul { list-style: none; padding: 0; }
-  .tl-item ul li {
-    font-size: 1.5rem; line-height: 1.8;
-    padding-left: 1.8rem; position: relative; margin-bottom: 0.4rem;
-  }
-  .tl-item ul li::before { content: '›'; position: absolute; left: 0; color: var(--main); }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
-  .skill-tag {
-    background: rgba(75,198,236,0.1);
-    border: 1px solid rgba(75,198,236,0.3);
-    border-radius: 2rem;
-    padding: 0.3rem 1.2rem;
-    font-size: 1.2rem;
-    color: var(--main);
-  }
-  .resume-note {
-    font-size: 1.4rem;
-    color: rgba(255,255,255,0.4);
-    margin-top: 1rem;
-    font-style: italic;
-  }
-
-  /* ── REFLECTION BLOCK (shared) ── */
-  .reflection-block {
-    background: rgba(75,198,236,0.04);
-    border-left: 3px solid var(--main);
-    border-radius: 0 1.5rem 1.5rem 0;
-    padding: 2rem 2.5rem;
-    margin-top: 2.5rem;
-  }
-  .reflection-block .ref-label {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--main);
-    opacity: 0.7;
-    margin-bottom: 0.8rem;
-  }
-  .reflection-block p { font-size: 1.5rem; line-height: 1.9; color: rgba(255,255,255,0.8); font-style: italic; }
-
-  /* ── GOALS ── */
-  .goals { background-color: var(--bg2); }
-  .competency { margin-bottom: 5rem; }
-  .competency > h3 {
-    font-size: 2.6rem;
-    color: var(--main);
-    margin-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(75,198,236,0.2);
-    padding-bottom: 0.8rem;
-  }
-  .competency > .why-text {
-    font-size: 1.6rem; line-height: 1.8;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 2rem;
-  }
-  .smart-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 1rem;
-  }
-  .smart-goal {
-    background: rgba(75,198,236,0.05);
-    border: 1px solid rgba(75,198,236,0.2);
-    border-radius: 1.5rem;
-    padding: 2rem;
-  }
-  .smart-goal .smart-label {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    color: var(--main);
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-  }
-  .smart-goal p { font-size: 1.5rem; line-height: 1.7; color: rgba(255,255,255,0.85); }
-  .aspirations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-top: 2rem;
-  }
-  .aspiration-card {
-    background-color: rgba(40,38,38,0.354);
-    border: 2px solid var(--main);
-    border-radius: 3rem;
-    padding: 3rem 2.5rem;
-    box-shadow: 0 0 5px var(--main);
-    transition: 0.3s ease;
-  }
-  .aspiration-card:hover {
-    box-shadow: 0 0 25px var(--main), 0 0 50px var(--main);
-    transform: scale(1.02);
-  }
-  .aspiration-card i { font-size: 3.5rem; color: var(--main); margin-bottom: 1rem; display: block; }
-  .aspiration-card h4 { font-size: 2rem; margin-bottom: 1rem; }
-  .aspiration-card p { font-size: 1.5rem; line-height: 1.7; }
-
-  /* ── ABOUT — add story to existing section ── */
-  .about-story { margin-top: 2rem; font-size: 1.6rem; line-height: 1.9; }
-  .artifact-box {
-    display: flex; gap: 2rem; align-items: flex-start;
-    background: rgba(75,198,236,0.04);
-    border: 1px solid rgba(75,198,236,0.2);
-    border-radius: 2rem;
-    padding: 2rem;
-    margin-top: 2rem;
-  }
-  .artifact-box i { font-size: 4rem; color: var(--main); flex-shrink: 0; margin-top: 0.3rem; }
-  .artifact-box .artifact-text h4 { font-size: 1.8rem; color: var(--main); margin-bottom: 0.5rem; }
-  .artifact-box .artifact-text p { font-size: 1.5rem; line-height: 1.7; color: rgba(255,255,255,0.8); }
-
-  /* ── PROJECT REFLECTION ── */
-  .proj-reflection {
-    font-size: 1.4rem;
-    line-height: 1.7;
-    color: rgba(75,198,236,0.85);
-    font-style: italic;
-    border-top: 1px solid rgba(75,198,236,0.2);
-    padding-top: 1.2rem;
-    margin-top: 0.5rem;
-    text-align: left;
-    width: 100%;
-  }
-
-  /* ── RESPONSIVE ADDITIONS ── */
-  @media(max-width:1285px) {
-    .career-grid { grid-template-columns: 1fr; }
-    .smart-pair { grid-template-columns: 1fr; }
-    .whyme-inner { flex-direction: column; }
-  }
-</style>
-</head>
+  </head>
 
 <body>
 <div id='stars'></div>
@@ -237,7 +35,7 @@
 </header>
 
 
-<!-- ══ HOME (unchanged) ══ -->
+<!-- ══ HOME ══ -->
 <section class="home" id="home"> 
   <div class="home-content">
   <h1> Hi, It's <span> Nikita </span> </h1>
@@ -269,18 +67,14 @@
 </section>
 
 
-<!-- ══ ABOUT (your original + story + artifact added) ══ -->
+<!-- ══ ABOUT (no image, story + artifact added) ══ -->
 <section class="about" id="about">
-
-  <div class="about-image">
-    <img src="image.jpeg" alt="">
-  </div>
 
   <div class="about-content">
     <h2>About <span> Me </span></h2>
     <p>
     As a Honours BSc student in Computer Science at Lassonde School of Engineering, York University, I am developing a 
-    solid foundation in software development and cybersecurity.  I'm a Computer Science student at 
+    solid foundation in software development and cybersecurity. I'm a Computer Science student at 
     York University with a passion for technology, data, and design. My expertise spans software 
     development, data analytics, 
     and IT systems, with hands-on experience using Python, javascript, SQL, and Power BI. 
@@ -295,8 +89,8 @@
       self-discipline. I was encouraged to be curious, critical, and rooted in faith and reflection. 
       There were periods of homesickness and anxiety, but those valleys became turning points that taught 
       me flexibility and empathy. I chose York University and Lassonde because of their emphasis on 
-      innovation and practical application — and I've grown more here, personally and professionally, than 
-      I ever expected.
+      innovation and practical application — and I've grown more here, personally and professionally, 
+      than I ever expected.
     </p>
 
     <div class="artifact-box">
@@ -309,13 +103,13 @@
         motivates me to stay resilient, grounded, and grateful in everything I pursue.</p>
       </div>
     </div>
-    
+
     <a href="http://www.linkedin.com/in/nikitagogia" class="btn"> Read more</a>
   </div>
 </section>
 
 
-<!-- ══ WHY ME (new section) ══ -->
+<!-- ══ WHY ME ══ -->
 <section class="whyme" id="whyme">
   <h2 class="heading"> Why Me </h2>
 
@@ -339,22 +133,22 @@
       <p>My mother taught me that real leadership is quiet, consistent, and for others. I carry that into 
       every project, every team, and every line of code I write. That's really why I do what I do.</p>
 
-      <a href="#contact" class="btn" style="margin-top:2rem;">Let's Connect</a>
+      <a href="#contact" class="btn">Let's Connect</a>
     </div>
 
     <div class="whyme-video">
       <i class="bx bxs-video"></i>
       <h4>Video Introduction</h4>
       <p>
-        📌 Add your Why Me video here once recorded.<br><br>
-        In YouTube: Share → Embed → copy the &lt;iframe&gt; code and paste it below this paragraph to replace this placeholder.
+        Add your Why Me video here once recorded.<br><br>
+        In YouTube: Share → Embed → copy the &lt;iframe&gt; code and paste it here to replace this placeholder.
       </p>
     </div>
   </div>
 </section>
 
 
-<!-- ══ CAREER (new section) ══ -->
+<!-- ══ CAREER ══ -->
 <section class="career" id="career">
   <h2 class="heading"> Career & Education </h2>
 
@@ -422,8 +216,8 @@
 
       </div>
 
-      <div style="margin-top:3rem;">
-        <a href="#contact" class="btn">📄 Request My Resume</a>
+      <div>
+        <a href="#contact" class="btn">Request My Resume</a>
         <p class="resume-note">Full resume available on request — replace this with a direct PDF link once uploaded.</p>
       </div>
     </div>
@@ -432,11 +226,10 @@
 </section>
 
 
-<!-- ══ GOALS (new section) ══ -->
+<!-- ══ GOALS ══ -->
 <section class="goals" id="goals">
   <h2 class="heading"> Goals & Reflections </h2>
 
-  <!-- Competency 1 -->
   <div class="competency">
     <h3>Competency 1 — Critical Thinking & Problem-Solving</h3>
     <p class="why-text">Both my co-op role and my coursework require structured, independent reasoning. As an IT Technician, I cannot always rely on others — I must analyze issues carefully, test systematically, and find the most effective solution on my own. Strengthening this competency helps me become more confident in my analytical abilities.</p>
@@ -456,7 +249,6 @@
     </div>
   </div>
 
-  <!-- Competency 2 -->
   <div class="competency">
     <h3>Competency 2 — Agility & Adaptability</h3>
     <p class="why-text">Balancing work and academics requires constant flexibility and resilience. Working at Kinectrics exposed me to new systems and professional expectations that are completely different from the classroom. Adapting quickly to change is essential for my future — and something I've learned is possible even when uncomfortable.</p>
@@ -476,7 +268,6 @@
     </div>
   </div>
 
-  <!-- Competency 3 -->
   <div class="competency">
     <h3>Competency 3 — Communication Skills</h3>
     <p class="why-text">Strong communication is essential in both professional and academic environments. At Kinectrics, I explain technical issues to users with no technical background. Developing this competency helps me articulate my ideas confidently and professionally — a skill that will serve me throughout my career in technology.</p>
@@ -496,8 +287,7 @@
     </div>
   </div>
 
-  <!-- Future Aspirations -->
-  <h2 class="heading" style="margin-top:2rem;">Future Aspirations</h2>
+  <h2 class="heading">Future Aspirations</h2>
   <div class="aspirations-grid">
     <div class="aspiration-card">
       <i class="bx bx-shield"></i>
@@ -518,7 +308,7 @@
 </section>
 
 
-<!-- ══ EXTRACURRICULARS (your original, unchanged) ══ -->
+<!-- ══ EXTRACURRICULARS ══ -->
 <section id="extracurriculars" class="extracurriculars">
   <h2 class="heading">Extracurriculars</h2>
 
@@ -546,7 +336,7 @@
 </section>
 
 
-<!-- ══ PROJECTS (your original + reflection lines added) ══ -->
+<!-- ══ PROJECTS (reflection lines added) ══ -->
 <section class="projects" id="projects">
   <h2 class="heading"> PROJECTS </h2>
   
@@ -612,7 +402,7 @@
         tracking with MySQL. Enhanced user experience with multiple difficulty levels and optimized 
         performance through automated testing and debugging for seamless cross-platform compatibility.
       </p>
-      <p class="proj-reflection">💡 One of my first full-stack builds — it gave me a complete picture of how the different layers of a web application connect, from front-end interaction all the way to the database.</p>
+      <p class="proj-reflection">💡 One of my first full-stack builds — it gave me a complete picture of how the different layers of a web application connect, from front-end interaction to the database.</p>
       <a href="https://number-guessing-game-xkfq.onrender.com/index.html">
       <div class="btn"> Review Project </div></a>
     </div>
@@ -627,7 +417,7 @@
         Safe Browsing API, ensuring reliable data for web safety checks. Received 
         shoutout from TD Bank for the impact on protection against fraud.
       </p>
-      <p class="proj-reflection">💡 This was born from a real concern — the people most targeted by online scams are often the least equipped to spot them. Building accessibility features for elderly users challenged me to think far beyond code quality, to the human being on the other side of the screen.</p>
+      <p class="proj-reflection">💡 Built for the people most targeted by online scams — those least equipped to spot them. Designing accessibility features for elderly users challenged me to think far beyond code quality, to the human being on the other side of the screen.</p>
       <a href="https://github.com/Arshya-tech/ClickShield">
       <div class="btn">Review Project</div></a>
     </div>
@@ -636,7 +426,7 @@
 </section>
 
 
-<!-- ══ CONTACT (your original, unchanged) ══ -->
+<!-- ══ CONTACT ══ -->
 <section class="contact" id="contact">
   <h2 class="heading"> Get In Touch </h2>
   <form action="https://api.web3forms.com/submit" method="POST">
@@ -663,7 +453,7 @@
 </section>
 
 
-<!-- ══ FOOTER (your original, + new nav links) ══ -->
+<!-- ══ FOOTER ══ -->
 <footer class="footer"> 
   <div class="social-icons">
     <a href="https://github.com/Kanhanikita"> <i class="bx bxl-github"></i></a>

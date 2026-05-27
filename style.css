@@ -539,3 +539,384 @@ html {
   }
 }
 
+
+
+/* ============================================================
+   NEW SECTIONS — added for e-portfolio rubric requirements
+   (Why Me, Career, Goals, About story/artifact, Project reflections)
+   ============================================================ */
+
+/* ── ABOUT — story paragraph + artifact box ── */
+.about-story {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+  line-height: 1.9;
+}
+
+.artifact-box {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: rgba(75, 198, 236, 0.04);
+  border: 1px solid rgba(75, 198, 236, 0.2);
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.artifact-box i {
+  font-size: 4rem;
+  color: var(--main);
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+}
+
+.artifact-box .artifact-text h4 {
+  font-size: 1.8rem;
+  color: var(--main);
+  margin-bottom: 0.5rem;
+}
+
+.artifact-box .artifact-text p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── REFLECTION BLOCK (shared across sections) ── */
+.reflection-block {
+  background: rgba(75, 198, 236, 0.04);
+  border-left: 3px solid var(--main);
+  border-radius: 0 1.5rem 1.5rem 0;
+  padding: 2rem 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.reflection-block .ref-label {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--main);
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+}
+
+.reflection-block p {
+  font-size: 1.5rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* ── PROJECT REFLECTION LINE ── */
+.proj-reflection {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  color: rgba(75, 198, 236, 0.85);
+  font-style: italic;
+  border-top: 1px solid rgba(75, 198, 236, 0.2);
+  padding-top: 1.2rem;
+  margin-top: 0.5rem;
+  text-align: left;
+  width: 100%;
+}
+
+/* ── WHY ME ── */
+.whyme {
+  background-color: var(--bg2);
+}
+
+.whyme-inner {
+  display: flex;
+  gap: 6rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.whyme-text {
+  flex: 1;
+  min-width: 28rem;
+}
+
+.whyme-text h3 {
+  font-size: 2.6rem;
+  color: var(--main);
+  margin-bottom: 1.5rem;
+}
+
+.whyme-text p {
+  font-size: 1.6rem;
+  line-height: 1.9;
+  margin-bottom: 1.8rem;
+}
+
+.whyme-text blockquote {
+  border-left: 3px solid var(--main);
+  padding-left: 2rem;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--main);
+  margin: 2rem 0;
+}
+
+.whyme-video {
+  flex: 1;
+  min-width: 28rem;
+  border: 2px dashed rgba(75, 198, 236, 0.35);
+  border-radius: 3rem;
+  padding: 4rem 3rem;
+  text-align: center;
+  background: rgba(75, 198, 236, 0.03);
+}
+
+.whyme-video i {
+  font-size: 6rem;
+  color: var(--main);
+}
+
+.whyme-video h4 {
+  font-size: 2.2rem;
+  color: var(--main);
+  margin: 1.5rem 0 1rem;
+}
+
+.whyme-video p {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+}
+
+/* ── CAREER ── */
+.career {
+  background-color: var(--bg);
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+}
+
+.career-col h3 {
+  font-size: 2.8rem;
+  color: var(--main);
+  margin-bottom: 3rem;
+  border-bottom: 2px solid rgba(75, 198, 236, 0.2);
+  padding-bottom: 1rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--main), rgba(75, 198, 236, 0.1));
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -3.7rem;
+  top: 0.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background: var(--main);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 8px var(--main);
+}
+
+.tl-date {
+  font-size: 1.3rem;
+  color: var(--main);
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.tl-item h4 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.tl-item .tl-org {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 1.2rem;
+}
+
+.tl-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tl-item ul li {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding-left: 1.8rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+}
+
+.tl-item ul li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--main);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: rgba(75, 198, 236, 0.1);
+  border: 1px solid rgba(75, 198, 236, 0.3);
+  border-radius: 2rem;
+  padding: 0.3rem 1.2rem;
+  font-size: 1.2rem;
+  color: var(--main);
+}
+
+.resume-note {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* ── GOALS ── */
+.goals {
+  background-color: var(--bg2);
+}
+
+.competency {
+  margin-bottom: 5rem;
+}
+
+.competency > h3 {
+  font-size: 2.6rem;
+  color: var(--main);
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(75, 198, 236, 0.2);
+  padding-bottom: 0.8rem;
+}
+
+.competency > .why-text {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.smart-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.smart-goal {
+  background: rgba(75, 198, 236, 0.05);
+  border: 1px solid rgba(75, 198, 236, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.smart-goal .smart-label {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--main);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.smart-goal p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.aspirations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.aspiration-card {
+  background-color: rgba(40, 38, 38, 0.354);
+  border: 2px solid var(--main);
+  border-radius: 3rem;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 0 5px var(--main);
+  transition: 0.3s ease;
+}
+
+.aspiration-card:hover {
+  box-shadow: 0 0 25px var(--main), 0 0 50px var(--main);
+  transform: scale(1.02);
+}
+
+.aspiration-card i {
+  font-size: 3.5rem;
+  color: var(--main);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.aspiration-card h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.aspiration-card p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+
+/* ── RESPONSIVE additions ── */
+@media(max-width: 1285px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+  .smart-pair {
+    grid-template-columns: 1fr;
+  }
+  .whyme-inner {
+    flex-direction: column;
+  }
+}
+
+/* ── ABOUT — centred layout (no image) ── */
+.about-centered {
+  justify-content: center;
+}
+
+.about-centered .about-content {
+  max-width: 80rem;
+  text-align: center;
+}
+
+.about-centered .about-content h2 {
+  text-align: center;
+}
+
+.about-centered .artifact-box {
+  text-align: left;
+}

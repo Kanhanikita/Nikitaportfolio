@@ -8,209 +8,7 @@
   </title>
 <link rel="stylesheet" href="style.css">
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-
-<!-- Extra styles ONLY for the new sections — uses same variables as style.css -->
-<style>
-  /* ── WHY ME ── */
-  .whyme { background-color: var(--bg2); }
-  .whyme-inner {
-    display: flex;
-    gap: 6rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .whyme-text { flex: 1; min-width: 28rem; }
-  .whyme-text h3 { font-size: 2.6rem; color: var(--main); margin-bottom: 1.5rem; }
-  .whyme-text p { font-size: 1.6rem; line-height: 1.9; margin-bottom: 1.8rem; }
-  .whyme-text blockquote {
-    border-left: 3px solid var(--main);
-    padding-left: 2rem;
-    font-size: 1.8rem;
-    font-style: italic;
-    color: var(--main);
-    margin: 2rem 0;
-  }
-  .whyme-video {
-    flex: 1;
-    min-width: 28rem;
-    border: 2px dashed rgba(75,198,236,0.35);
-    border-radius: 3rem;
-    padding: 4rem 3rem;
-    text-align: center;
-    background: rgba(75,198,236,0.03);
-  }
-  .whyme-video i { font-size: 6rem; color: var(--main); }
-  .whyme-video h4 { font-size: 2.2rem; color: var(--main); margin: 1.5rem 0 1rem; }
-  .whyme-video p { font-size: 1.5rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
-
-  /* ── CAREER ── */
-  .career { background-color: var(--bg); }
-  .career-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-  }
-  .career-col h3 {
-    font-size: 2.8rem;
-    color: var(--main);
-    margin-bottom: 3rem;
-    border-bottom: 2px solid rgba(75,198,236,0.2);
-    padding-bottom: 1rem;
-  }
-  .timeline { position: relative; padding-left: 3rem; }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--main), rgba(75,198,236,0.1));
-  }
-  .tl-item { position: relative; margin-bottom: 4rem; }
-  .tl-item::before {
-    content: '';
-    position: absolute;
-    left: -3.7rem; top: 0.5rem;
-    width: 1.4rem; height: 1.4rem;
-    border-radius: 50%;
-    background: var(--main);
-    border: 3px solid var(--bg);
-    box-shadow: 0 0 8px var(--main);
-  }
-  .tl-date { font-size: 1.3rem; color: var(--main); letter-spacing: 1px; margin-bottom: 0.4rem; }
-  .tl-item h4 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .tl-item .tl-org { font-size: 1.5rem; color: rgba(255,255,255,0.55); margin-bottom: 1.2rem; }
-  .tl-item ul { list-style: none; padding: 0; }
-  .tl-item ul li {
-    font-size: 1.5rem; line-height: 1.8;
-    padding-left: 1.8rem; position: relative; margin-bottom: 0.4rem;
-  }
-  .tl-item ul li::before { content: '›'; position: absolute; left: 0; color: var(--main); }
-  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
-  .skill-tag {
-    background: rgba(75,198,236,0.1);
-    border: 1px solid rgba(75,198,236,0.3);
-    border-radius: 2rem;
-    padding: 0.3rem 1.2rem;
-    font-size: 1.2rem;
-    color: var(--main);
-  }
-  .resume-note {
-    font-size: 1.4rem;
-    color: rgba(255,255,255,0.4);
-    margin-top: 1rem;
-    font-style: italic;
-  }
-
-  /* ── REFLECTION BLOCK (shared) ── */
-  .reflection-block {
-    background: rgba(75,198,236,0.04);
-    border-left: 3px solid var(--main);
-    border-radius: 0 1.5rem 1.5rem 0;
-    padding: 2rem 2.5rem;
-    margin-top: 2.5rem;
-  }
-  .reflection-block .ref-label {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--main);
-    opacity: 0.7;
-    margin-bottom: 0.8rem;
-  }
-  .reflection-block p { font-size: 1.5rem; line-height: 1.9; color: rgba(255,255,255,0.8); font-style: italic; }
-
-  /* ── GOALS ── */
-  .goals { background-color: var(--bg2); }
-  .competency { margin-bottom: 5rem; }
-  .competency > h3 {
-    font-size: 2.6rem;
-    color: var(--main);
-    margin-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(75,198,236,0.2);
-    padding-bottom: 0.8rem;
-  }
-  .competency > .why-text {
-    font-size: 1.6rem; line-height: 1.8;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 2rem;
-  }
-  .smart-pair {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 1rem;
-  }
-  .smart-goal {
-    background: rgba(75,198,236,0.05);
-    border: 1px solid rgba(75,198,236,0.2);
-    border-radius: 1.5rem;
-    padding: 2rem;
-  }
-  .smart-goal .smart-label {
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    color: var(--main);
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-  }
-  .smart-goal p { font-size: 1.5rem; line-height: 1.7; color: rgba(255,255,255,0.85); }
-  .aspirations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-top: 2rem;
-  }
-  .aspiration-card {
-    background-color: rgba(40,38,38,0.354);
-    border: 2px solid var(--main);
-    border-radius: 3rem;
-    padding: 3rem 2.5rem;
-    box-shadow: 0 0 5px var(--main);
-    transition: 0.3s ease;
-  }
-  .aspiration-card:hover {
-    box-shadow: 0 0 25px var(--main), 0 0 50px var(--main);
-    transform: scale(1.02);
-  }
-  .aspiration-card i { font-size: 3.5rem; color: var(--main); margin-bottom: 1rem; display: block; }
-  .aspiration-card h4 { font-size: 2rem; margin-bottom: 1rem; }
-  .aspiration-card p { font-size: 1.5rem; line-height: 1.7; }
-
-  /* ── ABOUT — add story to existing section ── */
-  .about-story { margin-top: 2rem; font-size: 1.6rem; line-height: 1.9; }
-  .artifact-box {
-    display: flex; gap: 2rem; align-items: flex-start;
-    background: rgba(75,198,236,0.04);
-    border: 1px solid rgba(75,198,236,0.2);
-    border-radius: 2rem;
-    padding: 2rem;
-    margin-top: 2rem;
-  }
-  .artifact-box i { font-size: 4rem; color: var(--main); flex-shrink: 0; margin-top: 0.3rem; }
-  .artifact-box .artifact-text h4 { font-size: 1.8rem; color: var(--main); margin-bottom: 0.5rem; }
-  .artifact-box .artifact-text p { font-size: 1.5rem; line-height: 1.7; color: rgba(255,255,255,0.8); }
-
-  /* ── PROJECT REFLECTION ── */
-  .proj-reflection {
-    font-size: 1.4rem;
-    line-height: 1.7;
-    color: rgba(75,198,236,0.85);
-    font-style: italic;
-    border-top: 1px solid rgba(75,198,236,0.2);
-    padding-top: 1.2rem;
-    margin-top: 0.5rem;
-    text-align: left;
-    width: 100%;
-  }
-
-  /* ── RESPONSIVE ADDITIONS ── */
-  @media(max-width:1285px) {
-    .career-grid { grid-template-columns: 1fr; }
-    .smart-pair { grid-template-columns: 1fr; }
-    .whyme-inner { flex-direction: column; }
-  }
-</style>
-</head>
+  </head>
 
 <body>
 <div id='stars'></div>
@@ -224,37 +22,25 @@
 </a>
 <i class="bx bx-menu" id="menu-icon"></i>
 <nav class="navbar">
-  <a href="#home"> Home </a>
   <a href="#about"> About </a>
   <a href="#whyme"> Why Me </a>
   <a href="#career"> Career </a>
   <a href="#goals"> Goals </a>
   <a href="#projects"> Projects </a>
-  <a href="#contact"> Contact </a>
   <a href="#extracurriculars">Extracurriculars</a>
 </nav>
 <button class="grad-button" onclick="document.location='#contact'"> Contact Me </button>
 </header>
 
 
-<!-- ══ HOME (unchanged) ══ -->
+<!-- ══ HOME ══ -->
 <section class="home" id="home"> 
   <div class="home-content">
   <h1> Hi, It's <span> Nikita </span> </h1>
-  <h3> I'm a <span class="typing"> Computer Security Major</span>
+  <h3> I'm a <span class="typing"> CS Major</span>
   </h3>
-  <p>
-      As a Bachelor of Science (Honours) student in Computer Science at the Lassonde School of Engineering,
-       York University, I'm developing a strong foundation in software development, data analysis, and 
-       cybersecurity. I have hands-on experience with Python, Java, JavaScript, HTML, and CSS, and
-        enjoy building efficient, user-focused applications. My goal is to apply my technical skills and 
-        problem-solving mindset to create 
-      innovative solutions that make technology more impactful, secure, and accessible.
-   
-  </p>
+
   <div class="social-icons">
-    <a href="https://github.com/Kanhanikita"> <i class="bx bxl-github"></i>
-      </a>
     <a href="http://www.linkedin.com/in/nikitagogia"> <i class="bx bxl-linkedin-square"></i></a>
   </div>
 
@@ -269,92 +55,74 @@
 </section>
 
 
-<!-- ══ ABOUT (your original + story + artifact added) ══ -->
-<section class="about" id="about">
-
-  <div class="about-image">
-    <img src="image.jpeg" alt="">
-  </div>
+<section class="about about-centered" id="about">
 
   <div class="about-content">
     <h2>About <span> Me </span></h2>
-    <p>
-    As a Honours BSc student in Computer Science at Lassonde School of Engineering, York University, I am developing a 
-    solid foundation in software development and cybersecurity.  I'm a Computer Science student at 
-    York University with a passion for technology, data, and design. My expertise spans software 
-    development, data analytics, 
-    and IT systems, with hands-on experience using Python, javascript, SQL, and Power BI. 
-    I enjoy solving technical challenges, optimizing workflows, and creating user-friendly 
-    digital solutions that make a real impact. I combine strong analytical thinking with creative 
-    problem-solving to bridge the gap between engineering, data, and design.
-    </p>
 
     <p class="about-story">
-      Moving to Canada to study was one of the most transformative decisions of my life — it required courage, 
+      Moving to Canada to study was one of the most transformative decisions of my life. It required courage, 
       independence, and a resilience I didn't know I had. Growing up, my family emphasized education and 
       self-discipline. I was encouraged to be curious, critical, and rooted in faith and reflection. 
       There were periods of homesickness and anxiety, but those valleys became turning points that taught 
       me flexibility and empathy. I chose York University and Lassonde because of their emphasis on 
-      innovation and practical application — and I've grown more here, personally and professionally, than 
-      I ever expected.
+      innovation and practical application and I've grown more here, personally and professionally, 
+      than I ever expected.
     </p>
 
     <div class="artifact-box">
       <i class="bx bxs-heart"></i>
       <div class="artifact-text">
-        <h4>My Artifact: Bracelets from Home</h4>
+        <h4>My Artifact: Bracelets from Home </h4>
         <p>A pair of bracelets gifted to me by my mother and sister. Although simple, they hold deep 
         emotional value. My mother represents patience, sacrifice, and unconditional love. My sister is 
-        my mentor and role model. Wearing these reminds me of their guidance and belief in me — and 
+        my mentor and role model. Wearing these reminds me of their guidance and belief in me and 
         motivates me to stay resilient, grounded, and grateful in everything I pursue.</p>
       </div>
     </div>
-    
+
     <a href="http://www.linkedin.com/in/nikitagogia" class="btn"> Read more</a>
   </div>
 </section>
 
 
-<!-- ══ WHY ME (new section) ══ -->
+<!-- ══ WHY ME ══ -->
 <section class="whyme" id="whyme">
-  <h2 class="heading"> Why Me </h2>
+  <h2 class="heading"> Why Me ? </h2>
 
   <div class="whyme-inner">
     <div class="whyme-text">
       <h3>My Story</h3>
-      <p>Hi, I'm Nikita Gogia — a third-year Computer Science student at York University's Lassonde 
+      <p>Hi, I'm Nikita Gogia , a third-year Computer Science student at York University's Lassonde 
       School of Engineering, currently on co-op as an IT Technician at Kinectrics, graduating in 2027.</p>
 
       <p>A few years ago, I made the biggest decision of my life: I left everything familiar behind in India 
-      and moved to Canada, alone. There were moments of real fear — homesickness, academic pressure, and 
+      and moved to Canada, alone. There were moments of real fear homesickness, academic pressure, and 
       the quiet challenge of building belonging from scratch. But those valleys became my turning points.</p>
 
-      <blockquote>"Technology should not only solve problems — it should help people."</blockquote>
+      <blockquote>"Technology should not only solve problems, it should help people."</blockquote>
 
       <p>That belief was born from experience. I know what it feels like to be overwhelmed and need clear, 
       patient guidance. It's why I built ClickShield to protect vulnerable users online, why I approach 
       every IT support ticket with empathy first, and why my deepest goal is to build cybersecurity tools 
-      that serve people — not just systems.</p>
+      that serve people not just systems.</p>
 
       <p>My mother taught me that real leadership is quiet, consistent, and for others. I carry that into 
       every project, every team, and every line of code I write. That's really why I do what I do.</p>
 
-      <a href="#contact" class="btn" style="margin-top:2rem;">Let's Connect</a>
+      <a href="#contact" class="btn">Let's Connect!</a>
     </div>
 
     <div class="whyme-video">
-      <i class="bx bxs-video"></i>
-      <h4>Video Introduction</h4>
-      <p>
-        📌 Add your Why Me video here once recorded.<br><br>
-        In YouTube: Share → Embed → copy the &lt;iframe&gt; code and paste it below this paragraph to replace this placeholder.
-      </p>
-    </div>
-  </div>
+  <h4>Video Introduction</h4>
+  <video width="100%" controls style="border-radius:1.5 rem;">
+    <source src="why me.mp4" type="video/mp4">
+  </video>
+</div>
 </section>
 
 
-<!-- ══ CAREER (new section) ══ -->
+<!-- ══ CAREER ══ -->
 <section class="career" id="career">
   <h2 class="heading"> Career & Education </h2>
 
@@ -365,11 +133,28 @@
       <div class="timeline">
 
         <div class="tl-item">
-          <p class="tl-date">Jan 2026 – Present</p>
+          <p class="tl-date">Apr 2026 – Present</p>
+          <h4>IT Services Assistant</h4>
+          <p class="tl-org">YU Card Office, York University · Toronto, Canada</p>
+          <ul>
+            <li>Returned to the YU Card Office following co-op, continuing to support students, staff, and faculty with YU-card services and account inquiries</li>
+            <li>Applied professional IT skills and communication experience gained at Kinectrics to improve the quality and efficiency of front-line service delivery</li>
+            <li>Maintain digital account records with strict confidentiality and data integrity using internal databases</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">Customer Support</span>
+            <span class="skill-tag">Data Integrity</span>
+            <span class="skill-tag">Payment Processing</span>
+            <span class="skill-tag">Database Management</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <p class="tl-date">Jan 2026 – Apr 2026</p>
           <h4>IT Technician Co-op</h4>
           <p class="tl-org">Kinectrics (a BWXT company) · Toronto, Canada</p>
           <ul>
-            <li>Resolve hardware and software support tickets — password resets, software installs, printer issues, and device configuration — using ServiceNow</li>
+            <li>Resolve hardware and software support tickets- password resets, software installs, printer issues, and device configuration using ServiceNow</li>
             <li>Manage user accounts and permissions in Active Directory; track device assets via Lansweeper</li>
             <li>Independently diagnosed a recurring Windows app installation failure traced to a Microsoft file integrity issue that the wider team could not solve</li>
             <li>Document all troubleshooting steps and resolutions with clear ticket summaries for team knowledge-sharing</li>
@@ -384,12 +169,31 @@
           </div>
         </div>
 
+        <div class="tl-item">
+          <p class="tl-date">May 2025 – Dec 2025</p>
+          <h4>IT Services Assistant</h4>
+          <p class="tl-org">YU Card Office, York University · Toronto, Canada</p>
+          <ul>
+            <li>Delivered front-line support to 200+ students, staff, and faculty weekly, issuing YU-cards and resolving account-related inquiries with a focus on clarity and accuracy</li>
+            <li>Processed transactions for meal plans, flex deposits, and card replacements, achieving 100% accuracy in payment reconciliation during shift-end audits</li>
+            <li>Maintained and updated digital account records, ensuring strict confidentiality and data integrity across student and staff profiles using internal databases</li>
+            <li>Worked on projects to analyze student data patterns and collection to support service improvements</li>
+          </ul>
+          <div class="skill-tags">
+            <span class="skill-tag">Customer Support</span>
+            <span class="skill-tag">Data Integrity</span>
+            <span class="skill-tag">Payment Processing</span>
+            <span class="skill-tag">Database Management</span>
+            <span class="skill-tag">Confidentiality</span>
+          </div>
+        </div>
+
       </div>
 
       <div class="reflection-block">
         <p class="ref-label">// reflection</p>
         <p>This placement taught me that technical ability is only half the job. The other half is 
-        communication — making a frustrated user feel heard and supported while you solve their problem. 
+        communication making a frustrated user feel heard and supported while you solve their problem. 
         I became more confident, more independent, and significantly better at explaining complex issues 
         simply. Most importantly, I learned that I can adapt to unfamiliar professional environments and 
         come out stronger. This is where my academic knowledge became real-world skill.</p>
@@ -422,9 +226,8 @@
 
       </div>
 
-      <div style="margin-top:3rem;">
-        <a href="#contact" class="btn">📄 Request My Resume</a>
-        <p class="resume-note">Full resume available on request — replace this with a direct PDF link once uploaded.</p>
+      <div>
+   <a href="Nikita-Resume.pdf" target="_blank" class="btn">View My Resume</a>
       </div>
     </div>
 
@@ -432,93 +235,89 @@
 </section>
 
 
-<!-- ══ GOALS (new section) ══ -->
+<!-- ══ GOALS ══ -->
 <section class="goals" id="goals">
   <h2 class="heading"> Goals & Reflections </h2>
 
-  <!-- Competency 1 -->
   <div class="competency">
-    <h3>Competency 1 — Critical Thinking & Problem-Solving</h3>
-    <p class="why-text">Both my co-op role and my coursework require structured, independent reasoning. As an IT Technician, I cannot always rely on others — I must analyze issues carefully, test systematically, and find the most effective solution on my own. Strengthening this competency helps me become more confident in my analytical abilities.</p>
+    <h3>Competency 1: Critical Thinking & Problem-Solving</h3>
+    <p class="why-text">Both my co-op role and my coursework require structured, independent reasoning. As an IT Technician, I cannot always rely on others, I must analyze issues carefully, test systematically, and find the most effective solution on my own. Strengthening this competency helps me become more confident in my analytical abilities.</p>
     <div class="smart-pair">
       <div class="smart-goal">
-        <p class="smart-label">S.M.A.R.T. Goal — Co-op</p>
-        <p>By April 2026, resolve at least 50 IT support tickets involving hardware, software, and network problems — documenting the root cause and solution for each, and meeting with my supervisor at least three times for feedback on my problem-solving approach.</p>
+        <p class="smart-label">S.M.A.R.T. Goal - Co-op</p>
+        <p>By April 2026, resolve at least 50 IT support tickets involving hardware, software, and network problems documenting the root cause and solution for each, and meeting with my supervisor at least three times for feedback on my problem-solving approach.</p>
       </div>
       <div class="smart-goal">
-        <p class="smart-label">S.M.A.R.T. Goal — Academic</p>
+        <p class="smart-label">S.M.A.R.T. Goal - Academic</p>
         <p>By April 2026, improve logical reasoning in EECS 2100 by completing all weekly practice problems, attending at least two office hours sessions, and reviewing all graded work within 48 hours to understand and correct mistakes.</p>
       </div>
     </div>
     <div class="reflection-block">
       <p class="ref-label">// reflection</p>
-      <p>The most valuable lesson from this placement: troubleshooting isn't about memorized steps — it's about understanding systems logically. The moment I stopped asking "what do I do?" and started asking "why is this happening?" was when I became genuinely useful. My confidence in independent problem-solving has grown substantially, and I resolved far more than 50 tickets.</p>
+      <p>The most valuable lesson from this placement: troubleshooting isn't about memorized steps, it's about understanding systems logically. The moment I stopped asking "what do I do?" and started asking "why is this happening?" was when I became genuinely useful. My confidence in independent problem-solving has grown substantially, and I resolved far more than 50 tickets.</p>
     </div>
   </div>
 
-  <!-- Competency 2 -->
   <div class="competency">
-    <h3>Competency 2 — Agility & Adaptability</h3>
-    <p class="why-text">Balancing work and academics requires constant flexibility and resilience. Working at Kinectrics exposed me to new systems and professional expectations that are completely different from the classroom. Adapting quickly to change is essential for my future — and something I've learned is possible even when uncomfortable.</p>
+    <h3>Competency 2:  Agility & Adaptability</h3>
+    <p class="why-text">Balancing work and academics requires constant flexibility and resilience. Working at Kinectrics exposed me to new systems and professional expectations that are completely different from the classroom. Adapting quickly to change is essential for my future and something I've learned is possible even when uncomfortable.</p>
     <div class="smart-pair">
       <div class="smart-goal">
-        <p class="smart-label">S.M.A.R.T. Goal — Co-op</p>
-        <p>By the midpoint of my work term, effectively use at least one new enterprise system (Active Directory or ServiceNow) and complete all assigned tasks independently — demonstrating adaptability through consistent, on-time delivery.</p>
+        <p class="smart-label">S.M.A.R.T. Goal - Co-op</p>
+        <p>By the midpoint of my work term, effectively use at least one new enterprise system (Active Directory or ServiceNow) and complete all assigned tasks independently demonstrating adaptability through consistent, on-time delivery.</p>
       </div>
       <div class="smart-goal">
-        <p class="smart-label">S.M.A.R.T. Goal — Academic</p>
-        <p>By April 2026, balance co-op and EECS 2100 responsibilities by maintaining a structured weekly schedule — submitting all assignments on time while responding to assigned workplace tickets within 24 hours.</p>
+        <p class="smart-label">S.M.A.R.T. Goal - Academic</p>
+        <p>By April 2026, balance co-op and EECS 2100 responsibilities by maintaining a structured weekly schedule submitting all assignments on time while responding to assigned workplace tickets within 24 hours.</p>
       </div>
     </div>
     <div class="reflection-block">
       <p class="ref-label">// reflection</p>
-      <p>I learned Active Directory, ServiceNow, and Lansweeper while managing university coursework. There were weeks where it felt impossible — but I created structure where there was none, and learned to ask for help before small issues became crises. As an international student, unfamiliar situations used to slow me down. Now they're something I lean into.</p>
+      <p>I learned Active Directory, ServiceNow, and Lansweeper while managing university coursework. There were weeks where it felt impossible but I created structure where there was none, and learned to ask for help before small issues became crises. As an international student, unfamiliar situations used to slow me down. Now they're something I lean into.</p>
     </div>
   </div>
 
-  <!-- Competency 3 -->
   <div class="competency">
-    <h3>Competency 3 — Communication Skills</h3>
-    <p class="why-text">Strong communication is essential in both professional and academic environments. At Kinectrics, I explain technical issues to users with no technical background. Developing this competency helps me articulate my ideas confidently and professionally — a skill that will serve me throughout my career in technology.</p>
+    <h3>Competency 3: Communication Skills</h3>
+    <p class="why-text">Strong communication is essential in both professional and academic environments. At Kinectrics, I explain technical issues to users with no technical background. Developing this competency helps me articulate my ideas confidently and professionally a skill that will serve me throughout my career in technology.</p>
     <div class="smart-pair">
       <div class="smart-goal">
-        <p class="smart-label">S.M.A.R.T. Goal — Co-op</p>
-        <p>By April 2026, ensure 100% of IT support tickets I handle include clear summaries of the issue, troubleshooting steps taken, and final resolution — requesting supervisor feedback on at least three written communications during the term.</p>
+        <p class="smart-label">S.M.A.R.T. Goal - Co-op</p>
+        <p>By April 2026, ensure 100% of IT support tickets I handle include clear summaries of the issue, troubleshooting steps taken, and final resolution requesting supervisor feedback on at least three written communications during the term.</p>
       </div>
       <div class="smart-goal">
-        <p class="smart-label">S.M.A.R.T. Goal — Academic</p>
+        <p class="smart-label">S.M.A.R.T. Goal - Academic</p>
         <p>By April 2026, improve academic communication in EECS 2100 by writing structured, logically organized proofs and seeking specific feedback from my professor when clarification is needed.</p>
       </div>
     </div>
     <div class="reflection-block">
       <p class="ref-label">// reflection</p>
-      <p>Communication was the most unexpected area of growth in my co-op. A frustrated user needs empathy before they need a solution. Listening actively, reassuring calmly, and explaining simply became as natural as the technical troubleshooting itself. This changed how I think about what it means to be a good technologist — it's not enough to solve the problem, you have to make the person feel taken care of throughout.</p>
+      <p>Communication was the most unexpected area of growth in my co-op. A frustrated user needs empathy before they need a solution. Listening actively, reassuring calmly, and explaining simply became as natural as the technical troubleshooting itself. This changed how I think about what it means to be a good technologist, it's not enough to solve the problem, you have to make the person feel taken care of throughout.</p>
     </div>
   </div>
 
-  <!-- Future Aspirations -->
-  <h2 class="heading" style="margin-top:2rem;">Future Aspirations</h2>
+  <h2 class="heading">Future Aspirations</h2>
   <div class="aspirations-grid">
     <div class="aspiration-card">
       <i class="bx bx-shield"></i>
       <h4>Cybersecurity Career</h4>
-      <p>Build a career in cybersecurity — starting with threat detection and AI/ML security applications, eventually leading cross-functional tech teams protecting organizations at scale.</p>
+      <p>Build a career in cybersecurity, starting with threat detection and AI/ML security applications, eventually leading cross-functional tech teams protecting organizations at scale.</p>
     </div>
     <div class="aspiration-card">
       <i class="bx bx-rocket"></i>
       <h4>Launch a Product</h4>
-      <p>Build and launch a cybersecurity-focused startup or product — growing from the accessibility problem I explored with ClickShield into something genuinely impactful.</p>
+      <p>Build and launch a cybersecurity-focused startup or product, growing from the accessibility problem I explored with ClickShield into something genuinely impactful.</p>
     </div>
     <div class="aspiration-card">
       <i class="bx bx-world"></i>
       <h4>Digital Rights Advocacy</h4>
-      <p>Contribute to public policy or digital rights advocacy around data privacy — bridging my technical expertise with the human stakes of how data is used and protected.</p>
+      <p>Contribute to public policy or digital rights advocacy around data privacy, bridging my technical expertise with the human stakes of how data is used and protected.</p>
     </div>
   </div>
 </section>
 
 
-<!-- ══ EXTRACURRICULARS (your original, unchanged) ══ -->
+<!-- ══ EXTRACURRICULARS ══ -->
 <section id="extracurriculars" class="extracurriculars">
   <h2 class="heading">Extracurriculars</h2>
 
@@ -546,7 +345,7 @@
 </section>
 
 
-<!-- ══ PROJECTS (your original + reflection lines added) ══ -->
+<!-- ══ PROJECTS (reflection lines added) ══ -->
 <section class="projects" id="projects">
   <h2 class="heading"> PROJECTS </h2>
   
@@ -574,7 +373,7 @@
         It keeps tabs on raw material usage during production and sends smart Firebase alerts to prevent stockouts—helping reduce them by 70%. 
         With everything tracked and logged, the system helped reduce material waste by 30% and gave teams full visibility into their inventory.
       </p>
-      <p class="proj-reflection">💡 Building something with a measurable real-world impact — reduced waste, smarter production — showed me that software can be an environmental and social tool. I want to keep building things that matter beyond the screen.</p>
+      <p class="proj-reflection">💡 Building something with a measurable real-world impact, reduced waste, smarter production , showed me that software can be an environmental and social tool. I want to keep building things that matter beyond the screen.</p>
       <a href="https://inventory-tracker-green.vercel.app/">
       <div class="btn"> Review Project </div></a>
     </div>
@@ -599,7 +398,7 @@
         integrated with TensorFlow Lite and MediaPipe-style hand landmark models, this app allows users to 
         interact with their devices through real-time gesture recognition via the camera.
       </p>
-      <p class="proj-reflection">💡 This project introduced me to the intersection of AI, mobile, and accessibility — and reinforced my commitment to building inclusive technology for users who interact with the world differently.</p>
+      <p class="proj-reflection">💡 This project introduced me to the intersection of AI, mobile, and accessibility and reinforced my commitment to building inclusive technology for users who interact with the world differently.</p>
       <a href="https://github.com/Kanhanikita/gestureme_app">
       <div class="btn"> Review Project </div></a>
     </div>
@@ -612,7 +411,7 @@
         tracking with MySQL. Enhanced user experience with multiple difficulty levels and optimized 
         performance through automated testing and debugging for seamless cross-platform compatibility.
       </p>
-      <p class="proj-reflection">💡 One of my first full-stack builds — it gave me a complete picture of how the different layers of a web application connect, from front-end interaction all the way to the database.</p>
+      <p class="proj-reflection">💡 One of my first full-stack builds it gave me a complete picture of how the different layers of a web application connect, from front-end interaction to the database.</p>
       <a href="https://number-guessing-game-xkfq.onrender.com/index.html">
       <div class="btn"> Review Project </div></a>
     </div>
@@ -627,7 +426,7 @@
         Safe Browsing API, ensuring reliable data for web safety checks. Received 
         shoutout from TD Bank for the impact on protection against fraud.
       </p>
-      <p class="proj-reflection">💡 This was born from a real concern — the people most targeted by online scams are often the least equipped to spot them. Building accessibility features for elderly users challenged me to think far beyond code quality, to the human being on the other side of the screen.</p>
+      <p class="proj-reflection">💡 Built for the people most targeted by online scams those least equipped to spot them. Designing accessibility features for elderly users challenged me to think far beyond code quality, to the human being on the other side of the screen.</p>
       <a href="https://github.com/Arshya-tech/ClickShield">
       <div class="btn">Review Project</div></a>
     </div>
@@ -636,7 +435,7 @@
 </section>
 
 
-<!-- ══ CONTACT (your original, unchanged) ══ -->
+<!-- ══ CONTACT ══ -->
 <section class="contact" id="contact">
   <h2 class="heading"> Get In Touch </h2>
   <form action="https://api.web3forms.com/submit" method="POST">
@@ -663,7 +462,7 @@
 </section>
 
 
-<!-- ══ FOOTER (your original, + new nav links) ══ -->
+<!-- ══ FOOTER ══ -->
 <footer class="footer"> 
   <div class="social-icons">
     <a href="https://github.com/Kanhanikita"> <i class="bx bxl-github"></i></a>
